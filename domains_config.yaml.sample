@@ -1,0 +1,44 @@
+domains:
+  # Cloudflare-SingleDomain
+  # issue for example.com and *.example.com
+  - domain_name: example.com
+    domain_ns: dns_cf
+    ns_key: CF_Token
+    ns_key_value: ABCDEFG1234567890
+    ns_secret: CF_Account_ID
+    ns_secret_value: HIJKLMN0987654321
+    SAN_domains: ""
+    
+  # Aliyun-SingleDomain
+  # issue for foo.xyz and *.foo.xyz
+  - domain_name: foo.xyz
+    domain_ns: dns_ali
+    ns_key: Ali_Key
+    ns_key_value: LTA123456
+    ns_secret: Ali_Secret
+    ns_secret_value: ABCDEFG1234567890
+    SAN_domains: ""
+    
+  # Aliyun-MultiSANs
+  # issue for bar.foo.xyz, *.bar.foo.xyz, dev.foo.xyz and *.dev.foo.xyz
+  - domain_name: bar.foo.xyz
+    domain_ns: dns_ali
+    ns_key: Ali_Key
+    ns_key_value: LTA123456
+    ns_secret: Ali_Secret
+    ns_secret_value: ABCDEFG1234567890
+    SAN_domains:
+    - dev.foo.xyz
+    
+  # DNSPod-MultiSANs
+  # issue for foo.net, *.foo.net, dev.foo.net, *.dev.foo.net, test.foo.net and *.test.foo.net
+  - domain_name: foo.net
+    domain_ns: dns_dp
+    ns_key: DP_Id
+    ns_key_value: 123456
+    ns_secret: DP_Key
+    ns_secret_value: ABCDEFG1234567890
+    SAN_domains:
+    - dev.foo.net
+    - test.foo.net
+    
